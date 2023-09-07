@@ -1,3 +1,4 @@
+import { FacebookIcon } from '@/assets'
 import Footer from '@/commons/DropDown/Footer'
 import Banner from '@/components/Banner'
 import BenefitBot from '@/components/BenefitBot'
@@ -11,15 +12,9 @@ import Technology from '@/components/Technology'
 import TitanPlatForm from '@/components/TitanPlatForm'
 
 const Home = () => {
-  const handleScroll = () => {
-    const titanElement = document.getElementById('titan')
-    if (titanElement) {
-      titanElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
   return (
     <div className='home'>
-      <Banner handleScroll={handleScroll} />
+      <Banner />
       <CryptoBot />
       <BenefitBot />
       <Technology />
@@ -28,8 +23,20 @@ const Home = () => {
       <Dashboard />
       <SelectedTitan />
       <Question />
-      <FormRequest id='titan' />
+      {/* <FormRequest id='titan' /> */}
       <Footer />
+      <div
+        className='chat-facebook'
+        onClick={() =>
+          window.open('https://www.facebook.com/messages/t/127840393552180')
+        }
+      >
+        <FacebookIcon />
+        <div className='info'>
+          <h6>Chat Facebook</h6>
+          <p>08:00 - 24:00</p>
+        </div>
+      </div>
     </div>
   )
 }

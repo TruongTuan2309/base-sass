@@ -1,11 +1,7 @@
 import { IMAGE } from '@/assets'
 import useMobile from '@/hooks/useMobile'
 
-interface BannerProps {
-  handleScroll: () => void
-}
-
-const Banner = ({ handleScroll }: BannerProps) => {
+const Banner = () => {
   const isMobile = useMobile()
   const banner = isMobile ? IMAGE.botBannerMobile : IMAGE.botBanner
   return (
@@ -24,9 +20,9 @@ const Banner = ({ handleScroll }: BannerProps) => {
           </div>
           <button
             className='btn-submit text-base color-black'
-            onClick={handleScroll}
+            onClick={() => window.open()}
           >
-            Đăng ký nhận tư vấn
+            Đăng ký sử dụng miễn phí 1 tháng
           </button>
         </div>
         <div className='image-banner'>
